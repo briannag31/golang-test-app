@@ -1,8 +1,14 @@
 package main
 
-import( "fmt"
-	
+import (
+	"fmt"
+	"log"
+	"net/http"
+	"github.com/briannag31/golang-test-app/router"
 )
+
 func main(){
-	fmt.Println("hello")
+	r := router.Router()
+	fmt.Println("starting the server on port 3001")
+	log.Fatal(http.ListenAndServe(":3001", r))
 }
